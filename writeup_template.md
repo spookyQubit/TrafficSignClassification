@@ -41,7 +41,7 @@ Detailed implementation of the model can be found in the link to my [project cod
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![alt text][image1]
+![alt text](./examples/training_images_count.jpg)
 
 ###Design and Test a Model Architecture
 
