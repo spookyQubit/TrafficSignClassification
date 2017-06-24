@@ -37,9 +37,13 @@ Detailed implementation of the model can be found in the link to my [project cod
 * The shape of a traffic sign image is 32 x 32 x 3
 * The number of unique classes/labels in the data set is 43
 
-We forst explore thre reletive distribution of the various classes in the training dataset. 
-![alt text](./examples/training_images_count.jpg)
-From the above plot, it is clear that the data in the training set is not uniformaly distributed amongst the 43 different classes. In particular, we have 11 times more data points for "Speed limit (50km/h)" as compared to "Speed limit (20km/h)".
+
+We first look at the reletive distribution of the various classes in the training dataset. 
+![alt text][image1]
+From the above plot, it is clear that the training data is not uniformaly distributed amongst the 43 different classes. In particular, we have 11 times more data points for "Speed limit (50km/h)" as compared to "Speed limit (20km/h)".
+
+Next we check if the distribution of classes in the validation set is similar to that in the training data.  
+![alt text][image2]
 
 ###Design and Test a Model Architecture
 
