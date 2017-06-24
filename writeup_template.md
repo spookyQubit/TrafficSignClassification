@@ -14,7 +14,7 @@ Results
 
 [//]: # (Image References)
 
-[image1]: ./examples/training_images_count.jpg "Visualization"
+[image1]: ./examples/training_images_count.jpg "Training data class counts"
 [image2]: ./examples/visualization_.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
@@ -25,23 +25,25 @@ Results
 
 ---
 
-Detailed implementation of the model can be found in the link to my [project code](https://github.com/spookyQubit/TrafficSignClassification/blob/master/Traffic_Sign_Classifier.ipynb)
+Detailed implementation of the model can be found in the link to my [project code](https://github.com/spookyQubit/TrafficSignClassification/blob/master/Traffic_Sign_Classifier.ipynb).
 
 ### Data Set Summary & Exploration
 
 #### Basic summary of the data set. 
 
-* The size of training set is 34799 (this was increased to 34799*2 after augmentation)
+* The size of training set is 34799 (this was increased to 34799 x 2 after augmentation)
 * The size of the validation set is 4410
 * The size of test set is 12630
 * The shape of a traffic sign image is 32 x 32 x 3
 * The number of unique classes/labels in the data set is 43
 
-####2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+We first look at the reletive distribution of the various classes in the training dataset. 
+![alt text][image1]
+From the above plot, it is clear that the training data is not uniformaly distributed amongst the 43 different classes. In particular, we have 11 times more data points for "Speed limit (50km/h)" as compared to "Speed limit (20km/h)".
 
-![alt text](./examples/training_images_count.jpg)
+Next we check if the distribution of classes in the validation set is similar to that in the training data.  
+![alt text][image2]
 
 ###Design and Test a Model Architecture
 
