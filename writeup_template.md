@@ -14,7 +14,7 @@ Results
 
 [//]: # (Image References)
 
-[image1]: ./examples/training_images_count.png "Visualization"
+[image1]: ./examples/training_images_count.jpg "Visualization"
 [image2]: ./examples/visualization_.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
