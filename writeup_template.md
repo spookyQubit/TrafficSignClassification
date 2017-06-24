@@ -15,7 +15,7 @@ Results
 [//]: # (Image References)
 
 [image1]: ./examples/training_images_count.jpg "Training data class counts"
-[image2]: ./examples/visualization_.jpg "Grayscaling"
+[image2]: ./examples/training_valid_images_count.jpg "Training test data ratio"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
@@ -44,6 +44,11 @@ From the above plot, it is clear that the training data is not uniformaly distri
 
 Next we check if the distribution of classes in the validation set is similar to that in the training data.  
 ![alt text][image2]
+The plot suggests that the distribution of the number of labes in training and validation datasets are different.
+
+### Input Images
+
+
 
 ###Design and Test a Model Architecture
 
