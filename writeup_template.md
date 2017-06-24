@@ -1,22 +1,21 @@
-#**Traffic Sign Recognition** 
+**Traffic Sign Recognition** 
 
 ---
 
-**Build a Traffic Sign Recognition Project**
+**Introduction**
 
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
+The goal of this project is to build a traffic sign recognition model which can classify images from the [German Traffic Sign Benchmarks](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). The learning model is based on convolutional neural networks. The architechture used is a modification of the original [LeNet](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf) setup.
 
+Results
+* Training set accuracy of 1.00%
+* Validation set accuracy of 97.2%
+* Test set accuracy of 95.2%
+* New Test set accuracy of 80% (5 new images)
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
+[image1]: ./examples/training_images_count.jpg "Visualization"
+[image2]: ./examples/visualization_.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
@@ -24,34 +23,25 @@ The goals / steps of this project are the following:
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
-
 ---
-###Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+Detailed implementation of the model can be found in the link to my [project code](https://github.com/spookyQubit/TrafficSignClassification/blob/master/Traffic_Sign_Classifier.ipynb)
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+### Data Set Summary & Exploration
 
-###Data Set Summary & Exploration
+#### Basic summary of the data set. 
 
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
-
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is 34799 (this was increased to 34799*2 after augmentation)
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is 32 x 32 x 3
+* The number of unique classes/labels in the data set is 43
 
 ####2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![alt text][image1]
+![alt text](./examples/training_images_count.jpg)
 
 ###Design and Test a Model Architecture
 
