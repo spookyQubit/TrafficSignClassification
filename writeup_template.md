@@ -16,7 +16,7 @@ Results
 
 [image1]: ./examples/training_images_count.jpg "Training data class counts"
 [image2]: ./examples/training_valid_images_count.jpg "Training test data ratio"
-[image3]: ./examples/original_images.png "Original images"
+[image3]: ./examples/origina_images.png "Original images"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
