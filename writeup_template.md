@@ -1,8 +1,9 @@
-#**Traffic Sign Recognition** 
+**Traffic Sign Recognition** 
 
 ---
 
 **Introduction**
+
 The goal of this project is to build a traffic sign recognition model which can classify images from the [German Traffic Sign Benchmarks](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). The learning model is based on convolutional neural networks. The architechture used is a modification of the original [LeNet](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf) setup.
 
 Results
