@@ -9,6 +9,7 @@ The goal of this project is to build a traffic sign recognition model which can 
 Results
 * Training set accuracy of 1.00%
 * Validation set accuracy of 97.2%
+* Test set accuracy of 95.2%
 * New Test set accuracy of 80% (5 new images)
 
 
