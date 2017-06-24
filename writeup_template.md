@@ -16,7 +16,7 @@ Results
 
 [image1]: ./examples/training_images_count.jpg "Training data class counts"
 [image2]: ./examples/training_valid_images_count.jpg "Training test data ratio"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image3]: ./examples/origin_images.png "Original images"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -47,7 +47,8 @@ Next we check if the distribution of classes in the validation set is similar to
 The plot suggests that the distribution of the number of labes in training and validation datasets are different.
 
 ### Input Images
-
+A peek into the images in the training dataset shows us that some of the images are difficult to classify. For example, notice the "No passing" image below. 
+![alt text][image3]
 
 
 ###Design and Test a Model Architecture
