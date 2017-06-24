@@ -12,18 +12,6 @@ Results
 * Test set accuracy of 95.2%
 * New Test set accuracy of 80% (5 new images)
 
-
-**Build a Traffic Sign Recognition Project**
-
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
-
-
 [//]: # (Image References)
 
 [image1]: ./examples/training_images_count.png "Visualization"
@@ -37,7 +25,7 @@ The goals / steps of this project are the following:
 
 ---
 
-A link to my [project code](https://github.com/spookyQubit/TrafficSignClassification/blob/master/Traffic_Sign_Classifier.ipynb)
+Detailed implementation of the model can be found in the link to my [project code](https://github.com/spookyQubit/TrafficSignClassification/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
