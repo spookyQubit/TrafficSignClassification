@@ -18,9 +18,10 @@ Results
 [image3]: ./examples/original_images.png "Original images"
 [image4]: ./examples/augmented_image.png "Augmented image"
 [image5]: ./examples/transformed.png "Transformed image"
-[image6]: ./examples/new_images.png "New images"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image6]: ./examples/confusion_matrix.png "Confusion matrix"
+[image7]: ./examples/new_images.png "New images"
+[image8]: ./examples/placeholder.png "Traffic Sign 4"
+[image9]: ./examples/placeholder.png "Traffic Sign 5"
 
 ---
 
@@ -108,6 +109,11 @@ This adjustment increased the accuracy but still there was considerable overfitt
 Once this architechture was decided, the learning rate was lowered the batch size was reduced and the number of epochs were increased to 50. 
 * The initial weights of the layers were chosen as discussed by [Andrej Karapathy](http://cs231n.github.io/neural-networks-2/)
 
+For the final model, the confusion matrix evaluated on the validation dataset is
+
+![alt text][image6]
+
+
 Final results
 * Training set accuracy of 1.00%
 * Validation set accuracy of 97.2%
@@ -118,7 +124,7 @@ Final results
 
 The model's ability to predict on new traffic signs was tested on 5 new images. These images were rescaled/resized to 32x32x3 numpy array and the same pre-processing step was applied to them before feeding it to the model. The images and the top five predicted classes with their corresponding probabilites is shown below:
 
-![alt text][image6]
+![alt text][image7]
 
 The first image might be difficult to classify because ...
 
