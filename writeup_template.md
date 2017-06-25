@@ -10,7 +10,6 @@ Results
 * Training set accuracy of 1.00%
 * Validation set accuracy of 97.2%
 * Test set accuracy of 95.2%
-* New Test set accuracy of 80% (5 new images)
 
 [//]: # (Image References)
 
@@ -113,7 +112,6 @@ Final results
 * Training set accuracy of 1.00%
 * Validation set accuracy of 97.2%
 * Test set accuracy of 95.2%
-* New Test set accuracy of 80% (5 new images)
 
 
 ###Test a Model on New Images
