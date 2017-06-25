@@ -55,10 +55,12 @@ A peek into the images in the training dataset shows us that some of the images 
 For each training image, an augmented image was generated. The following transformations were done for augmentation:
 
 ```Augmentation
-..* Blah
-..* Bluh
+* random_brightness: Randomly changing the brigntness of the image
+* random_rotation: Randomly changing the angle of the image. In order to prevent loss of information contained in angles, the random angles with with the images were rotated were picked from a distribution with a small standard deviation.
+* random_translation: Randomly move the image
+* random_shear: Randomly distort the image
 ```
-The following steps were used on each training image to generate a 
+The fact that each training image had a corresponding augmented image ensured that the relative distribution of the class labels did not change after agugmentation. 
 
 ### Preprocessing
 All images were scaled so that the mean of the 
