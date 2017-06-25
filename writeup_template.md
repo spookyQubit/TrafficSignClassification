@@ -89,9 +89,9 @@ Layer # | Layer Type | Output Shape
 **Output**| Logits | 43
 
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### Training the model
 
-To train the model, I used tensorflow's AdamOptimizer. The various hyperparameters which were considered while training were:
+To train the model, I used tensorflow's **AdamOptimizer**. The various hyperparameters which were considered while training were:
 1) Number of layers
 2) Number of feature maps in convolutional layers
 3) Number of neurons in fully connected layers
@@ -100,25 +100,21 @@ To train the model, I used tensorflow's AdamOptimizer. The various hyperparamete
 6) Learning rate
 7) Batch size  
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+An iterative approach was chosen to come up with the final model:
+* What was the first architecture that was tried and why was it chosen? At first, a LeNet architechture with five layers were chosen with parameters same as in LeNet5 with {learning_rate: 0.001, BATCH_SIZE: 100, EPOCH: 5}. No dropout was used. 
+* What were some problems with the initial architecture? The initial architechture had a huge gap between training and validation accuracy. Also, the validation acuracy was around 91%, not acceptable as per the requirements of the project.  
+* How was the architecture adjusted and why was it adjusted? In order to increase the accuracy, I increased the number of feature maps in the convolutional layers. For first layer, feature maps was increased from 6 to 12. For the second convolutional layer, the number of feature maps were increased from 16 to 32. 
+This adjustment increased the accuracy but still there was considerable overfitting. In order to address the problem, dropout was added to the fully connected layer. Also one of the fully connected layer was completeley dropped. This considerably reduced overfitting and gave a validation accuracy of around 96%. 
+Once this architechture was decided, the learning rate was lowered the batch size was reduced and the number of epochs were increased to 50. 
+* The initial weights of the layers were chosen as discussed by [Andrej Karapathy](http://cs231n.github.io/neural-networks-2/)
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+Final results
+* Training set accuracy of 1.00%
+* Validation set accuracy of 97.2%
+* Test set accuracy of 95.2%
+* New Test set accuracy of 80% (5 new images)
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
 
 ###Test a Model on New Images
 
