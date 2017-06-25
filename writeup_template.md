@@ -16,8 +16,8 @@ Results
 
 [image1]: ./examples/training_images_count.jpg "Training data class counts"
 [image2]: ./examples/training_valid_images_count.jpg "Training test data ratio"
-[image3]: ./examples/origin_images.png "Original images"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
+[image3]: ./examples/original_images.png "Original images"
+[image4]: ./examples/augmented_image.png "Augmented image"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
@@ -48,7 +48,22 @@ The plot suggests that the distribution of the number of labes in training and v
 
 ### Input Images
 A peek into the images in the training dataset shows us that some of the images are difficult to classify. For example, notice the "No passing" image below. 
+
 ![alt text][image3]
+
+### Data Augmentation
+For each training image, an augmented image was generated. The following transformations were done for augmentation:
+
+```Augmentation
+* random_brightness: Randomly change the brigntness of the image
+* random_rotation: Randomly changing the angle of the image. In order to prevent loss of information contained in angles, the random angles with with the images were rotated were picked from a distribution with a small standard deviation.
+* random_translation: Randomly move the image
+* random_shear: Randomly distort the image
+```
+The fact that each training image had a corresponding augmented image ensured that the relative distribution of the class labels did not change after agugmentation. Increasing the training datasize did increase the time it took to train the model but it helped to reduce overfitting. 
+
+### Preprocessing
+Each image in the training/validation/test set was scaled to have zero mean and unit variance.   
 
 
 ###Design and Test a Model Architecture
@@ -69,7 +84,7 @@ To add more data to the the data set, I used the following techniques because ..
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
+![alt text][image4]
 
 The difference between the original data set and the augmented data set is the following ... 
 
