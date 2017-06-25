@@ -18,7 +18,7 @@ Results
 [image3]: ./examples/original_images.png "Original images"
 [image4]: ./examples/augmented_image.png "Augmented image"
 [image5]: ./examples/transformed.png "Transformed image"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
+[image6]: ./examples/new_images.png "New images"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
@@ -115,6 +115,7 @@ Final results
 
 
 ###Test a Model on New Images
+![alt text][image6] 
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
