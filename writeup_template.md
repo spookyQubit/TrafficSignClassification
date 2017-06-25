@@ -1,8 +1,8 @@
-**Traffic Sign Recognition** 
+# Traffic Sign Recognition 
 
 ---
 
-**Introduction**
+### Introduction
 
 The goal of this project is to build a traffic sign recognition model which can classify images from the [German Traffic Sign Benchmarks](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). The learning model is based on convolutional neural networks. The architechture used is a modification of the original [LeNet](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf) setup.
 
@@ -10,7 +10,6 @@ Results
 * Training set accuracy of 1.00%
 * Validation set accuracy of 97.2%
 * Test set accuracy of 95.2%
-* New Test set accuracy of 80% (5 new images)
 
 [//]: # (Image References)
 
@@ -18,8 +17,8 @@ Results
 [image2]: ./examples/training_valid_images_count.jpg "Training test data ratio"
 [image3]: ./examples/original_images.png "Original images"
 [image4]: ./examples/augmented_image.png "Augmented image"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
+[image5]: ./examples/transformed.png "Transformed image"
+[image6]: ./examples/new_images.png "New images"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
@@ -46,12 +45,12 @@ Next we check if the distribution of classes in the validation set is similar to
 ![alt text][image2]
 The plot suggests that the distribution of the number of labes in training and validation datasets are different.
 
-### Input Images
+#### Input Images
 A peek into the images in the training dataset shows us that some of the images are difficult to classify. For example, notice the "No passing" image below. 
 
 ![alt text][image3]
 
-### Data Augmentation
+#### Data Augmentation
 For each training image, an augmented image was generated. The following transformations were done for augmentation:
 
 ```Augmentation
@@ -62,76 +61,61 @@ For each training image, an augmented image was generated. The following transfo
 ```
 The fact that each training image had a corresponding augmented image ensured that the relative distribution of the class labels did not change after agugmentation. Increasing the training datasize did increase the time it took to train the model but it helped to reduce overfitting. 
 
-### Preprocessing
-Each image in the training/validation/test set was scaled to have zero mean and unit variance.   
-
-
-###Design and Test a Model Architecture
-
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
-
-As a first step, I decided to convert the images to grayscale because ...
-
-Here is an example of a traffic sign image before and after grayscaling.
-
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
+An example of an original image with its corresponding agmented image is shown below.
 
 ![alt text][image4]
 
-The difference between the original data set and the augmented data set is the following ... 
+### Preprocessing
+Each image in the training/validation/test set was scaled to have zero mean and unit variance.   
+![alt text][image5]
+
+### Model Architecture
+The model was based on the LeNet architechture. The following table shows the dimentionality and the type of the layers used in the model. 
+
+Layer # | Layer Type | Output Shape
+:---:| :--- | :---
+**Input**||32x32x3 (3 because there are three color channels)
+**1**| Convolutional | 28x28x24
+**1** | Activation (Relu) | 28x28x24
+**1**| Pooling (Max) | 14x14x24
+**2**| Convolutional | 10x10x64
+**2** | Activation (Relu) | 10x10x64
+**2**| Pooling (Max) | 5x5x64
+| Flatten | 1600
+**3**| Fully Connected | 480
+**3**| Activation (Relu) | 480
+**4**| Fully Connected | 43 (The number of unique labes in the training data)
+**Output**| Logits | 43
 
 
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### Training the model
 
-My final model consisted of the following layers:
-
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+To train the model, I used tensorflow's **AdamOptimizer**. The various hyperparameters which were considered while training were:
+1) Number of layers
+2) Number of feature maps in convolutional layers
+3) Number of neurons in fully connected layers
+4) Droupout probability
+4) Number of epochs
+6) Learning rate
+7) Batch size  
 
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+An iterative approach was chosen to come up with the final model:
+* What was the first architecture that was tried and why was it chosen? At first, a LeNet architechture with five layers were chosen with parameters same as in LeNet5 with {learning_rate: 0.001, BATCH_SIZE: 100, EPOCH: 5}. No dropout was used. 
+* What were some problems with the initial architecture? The initial architechture had a huge gap between training and validation accuracy. Also, the validation acuracy was around 91%, not acceptable as per the requirements of the project.  
+* How was the architecture adjusted and why was it adjusted? In order to increase the accuracy, I increased the number of feature maps in the convolutional layers. For first layer, feature maps was increased from 6 to 12. For the second convolutional layer, the number of feature maps were increased from 16 to 32. 
+This adjustment increased the accuracy but still there was considerable overfitting. In order to address the problem, dropout was added to the fully connected layer. Also one of the fully connected layer was completeley dropped. This considerably reduced overfitting and gave a validation accuracy of around 96%. 
+Once this architechture was decided, the learning rate was lowered the batch size was reduced and the number of epochs were increased to 50. 
+* The initial weights of the layers were chosen as discussed by [Andrej Karapathy](http://cs231n.github.io/neural-networks-2/)
 
-To train the model, I used an ....
+Final results
+* Training set accuracy of 1.00%
+* Validation set accuracy of 97.2%
+* Test set accuracy of 95.2%
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
-My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
 
 ###Test a Model on New Images
+![alt text][image6] 
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
