@@ -18,7 +18,7 @@ Results
 [image2]: ./examples/training_valid_images_count.jpg "Training test data ratio"
 [image3]: ./examples/original_images.png "Original images"
 [image4]: ./examples/augmented_image.png "Augmented image"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
+[image5]: ./examples/transformed.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
@@ -64,7 +64,7 @@ The fact that each training image had a corresponding augmented image ensured th
 
 ### Preprocessing
 Each image in the training/validation/test set was scaled to have zero mean and unit variance.   
-
+![alt text][image5]
 
 ###Design and Test a Model Architecture
 
