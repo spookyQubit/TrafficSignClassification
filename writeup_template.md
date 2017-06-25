@@ -1,8 +1,8 @@
-**Traffic Sign Recognition** 
+# Traffic Sign Recognition 
 
 ---
 
-**Introduction**
+### Introduction
 
 The goal of this project is to build a traffic sign recognition model which can classify images from the [German Traffic Sign Benchmarks](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). The learning model is based on convolutional neural networks. The architechture used is a modification of the original [LeNet](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf) setup.
 
@@ -46,12 +46,12 @@ Next we check if the distribution of classes in the validation set is similar to
 ![alt text][image2]
 The plot suggests that the distribution of the number of labes in training and validation datasets are different.
 
-### Input Images
+#### Input Images
 A peek into the images in the training dataset shows us that some of the images are difficult to classify. For example, notice the "No passing" image below. 
 
 ![alt text][image3]
 
-### Data Augmentation
+#### Data Augmentation
 For each training image, an augmented image was generated. The following transformations were done for augmentation:
 
 ```Augmentation
@@ -91,7 +91,14 @@ Layer # | Layer Type | Output Shape
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, I used tensorflow's AdamOptimizer. The various hyperparameters which were considered while training were:
+1) Number of layers
+2) Number of feature maps in convolutional layers
+3) Number of neurons in fully connected layers
+4) Droupout probability
+4) Number of epochs
+6) Learning rate
+7) Batch size  
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
