@@ -102,9 +102,9 @@ To train the model, I used tensorflow's **AdamOptimizer**. The various hyperpara
 
 
 An iterative approach was chosen to come up with the final model:
-* What was the first architecture that was tried and why was it chosen? At first, a LeNet architechture with five layers were chosen with parameters same as in LeNet5 with {learning_rate: 0.001, BATCH_SIZE: 100, EPOCH: 5}. No dropout was used. 
-* What were some problems with the initial architecture? The initial architechture had a huge gap between training and validation accuracy. Also, the validation acuracy was around 91%, not acceptable as per the requirements of the project.  
-* How was the architecture adjusted and why was it adjusted? In order to increase the accuracy, I increased the number of feature maps in the convolutional layers. For first layer, feature maps was increased from 6 to 12. For the second convolutional layer, the number of feature maps were increased from 16 to 32. 
+* Initial architecture: At first, a LeNet architechture with five layers were chosen with parameters same as in LeNet5 with {learning_rate: 0.001, BATCH_SIZE: 100, EPOCH: 5}. No dropout was used. 
+* Problems with the first architecture: The initial architechture had a huge gap between training and validation accuracy. Also, the validation acuracy was around 91%, not acceptable as per the requirements of the project.  
+* Adjustment of architecture: In order to increase the accuracy, I increased the number of feature maps in the convolutional layers. For first layer, feature maps was increased from 6 to 12. For the second convolutional layer, the number of feature maps were increased from 16 to 32. 
 This adjustment increased the accuracy but still there was considerable overfitting. In order to address the problem, dropout was added to the fully connected layer. Also one of the fully connected layer was completeley dropped. This considerably reduced overfitting and gave a validation accuracy of around 96%. 
 Once this architechture was decided, the learning rate was lowered the batch size was reduced and the number of epochs were increased to 50. 
 * The initial weights of the layers were chosen as discussed by [Andrej Karapathy](http://cs231n.github.io/neural-networks-2/)
@@ -122,45 +122,10 @@ Final results
 
 ### Test a Model on New Images
 
-The model's ability to predict on new traffic signs was tested on 5 new images. These images were rescaled/resized to 32x32x3 numpy array and the same pre-processing step was applied to them before feeding it to the model. The images and the top five predicted classes with their corresponding probabilites is shown below:
+The model's ability to predict on new traffic signs was tested on 5 new images. These images were rescaled/resized to 32x32x3 numpy arrays and the same pre-processing step was applied to them before feeding it to the model. The images and the top five classes predicted by the model with their corresponding probabilites is shown below:
 
 ![alt text][image7]
 
-The first image might be difficult to classify because ...
-
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-
-Here are the results of the prediction:
-
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
-
-
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
-
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+The model was able to correctly classify 4 out of the five new images thus having an accuracy of 80%. The one image which was incorrectly classified is the Speed limit (80km/h) sign which was predicted as Speed limit (30km/h). The reason of this could be because of the incorrect featurization of the digit 8 which may have led to 8~3. 
 
 
