@@ -70,8 +70,8 @@ An example of an original image with its corresponding agmented image is shown b
 Each image in the training/validation/test set was scaled to have zero mean and unit variance.   
 ![alt text][image5]
 
-### Design and Test a Model Architecture
-The model was based on the LeNet architechture.
+### Model Architecture
+The model was based on the LeNet architechture. The following table shows the dimentionality and the type of the layers used in the model. 
 
 Layer # | Layer Type | Output Shape
 :---:| :--- | :---
@@ -87,45 +87,6 @@ Layer # | Layer Type | Output Shape
 **3**| Activation (Relu) | 480
 **4**| Fully Connected | 43 (The number of unique labes in the training data)
 **Output**| Logits | 43
-
-
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
-
-As a first step, I decided to convert the images to grayscale because ...
-
-Here is an example of a traffic sign image before and after grayscaling.
-
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image4]
-
-The difference between the original data set and the augmented data set is the following ... 
-
-
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
-My final model consisted of the following layers:
-
-| Layer         		|     Layer Type	        					|      Output Shape
-|:---------------------:|:---------------------------------------------:| 
-| Input         		|    							| 32x32x3 (3 because there are three color channels)
-| 1     	| Convolutional 	| 28x28x24
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
 
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
