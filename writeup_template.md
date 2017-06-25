@@ -53,10 +53,11 @@ A peek into the images in the training dataset shows us that some of the images 
 
 ### Data Augmentation
 For each training image, an augmented image was generated. The following transformations were done for augmentation:
-'''Augmentation
+
+```Augmentation
 ..* Blah
 ..* Bluh
-'''
+```
 The following steps were used on each training image to generate a 
 
 ### Preprocessing
