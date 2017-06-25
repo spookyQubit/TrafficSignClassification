@@ -18,7 +18,7 @@ Results
 [image2]: ./examples/training_valid_images_count.jpg "Training test data ratio"
 [image3]: ./examples/original_images.png "Original images"
 [image4]: ./examples/augmented_image.png "Augmented image"
-[image5]: ./examples/transformed.png "Traffic Sign 2"
+[image5]: ./examples/transformed.png "Transformed image"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
@@ -61,6 +61,10 @@ For each training image, an augmented image was generated. The following transfo
 * random_shear: Randomly distort the image
 ```
 The fact that each training image had a corresponding augmented image ensured that the relative distribution of the class labels did not change after agugmentation. Increasing the training datasize did increase the time it took to train the model but it helped to reduce overfitting. 
+
+An example of an original image with its corresponding agmented image is shown below.
+
+![alt text][image4]
 
 ### Preprocessing
 Each image in the training/validation/test set was scaled to have zero mean and unit variance.   
