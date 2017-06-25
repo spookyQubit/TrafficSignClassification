@@ -114,15 +114,11 @@ Final results
 * Test set accuracy of 95.2%
 
 
-###Test a Model on New Images
-![alt text][image6] 
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+The model's ability to predict on new traffic signs was tested on 5 new images. These images were rescaled/resized to 32x32x3 numpy array and the same pre-processing step was applied to them before feeding it to the model. The images and the top five predicted classes with their corresponding probabilites is shown below:
 
-Here are five German traffic signs that I found on the web:
-
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image6]
 
 The first image might be difficult to classify because ...
 
