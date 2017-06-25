@@ -71,7 +71,22 @@ Each image in the training/validation/test set was scaled to have zero mean and 
 ![alt text][image5]
 
 ### Design and Test a Model Architecture
-The model was based on the LeNet architechture, the schematic of which is shown below:
+The model was based on the LeNet architechture.
+
+Layer # | Layer Type | Output Shape
+:---:| :--- | :---
+**Input**||32x32x3 (3 because there are three color channels)
+**1**| Convolutional | 28x28x24
+**1** | Activation (Relu) | 28x28x24
+**1**| Pooling (Max) | 14x14x24
+**2**| Convolutional | 10x10x64
+**2** | Activation (Relu) | 10x10x64
+**2**| Pooling (Max) | 5x5x64
+| Flatten | 1600
+**3**| Fully Connected | 480
+**3**| Activation (Relu) | 480
+**4**| Fully Connected | 43 (The number of unique labes in the training data)
+**Output**| Logits | 43
 
 
 ####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
