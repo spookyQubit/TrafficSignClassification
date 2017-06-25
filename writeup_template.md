@@ -48,9 +48,19 @@ The plot suggests that the distribution of the number of labes in training and v
 
 ### Input Images
 A peek into the images in the training dataset shows us that some of the images are difficult to classify. For example, notice the "No passing" image below. 
+
 ![alt text][image3]
 
-![alt text][image4]
+### Data Augmentation
+For each training image, an augmented image was generated. The following transformations were done for augmentation:
+'''Augmentation
+..* Blah
+..* Bluh
+'''
+The following steps were used on each training image to generate a 
+
+### Preprocessing
+All images were scaled so that the mean of the 
 
 
 ###Design and Test a Model Architecture
@@ -71,7 +81,7 @@ To add more data to the the data set, I used the following techniques because ..
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
+![alt text][image4]
 
 The difference between the original data set and the augmented data set is the following ... 
 
