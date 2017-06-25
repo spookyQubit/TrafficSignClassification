@@ -99,10 +99,10 @@ The difference between the original data set and the augmented data set is the f
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
+| Layer         		|     Layer Type	        					|      Output Shape
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Input         		|    							| 32x32x3 (3 because there are three color channels)
+| 1     	| Convolutional 	| 28x28x24
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
 | Convolution 3x3	    | etc.      									|
