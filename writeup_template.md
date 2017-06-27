@@ -134,3 +134,7 @@ The model was able to correctly classify 4 out of the five new images thus havin
 2) I did not use GPU as I found that the AMI on AWS did not have a couple of packages (like cv2) which I was considering to use.
 3) There are some classes which have low accuracy, for example "Roundabout mandatory". It might help to add more data and tweak the pre-processing pipeline to increase the accuracy of these classes. 
 4) It will be interesting to see the performace by choosing a completely different architecture, for example AlexNet. 
+
+### References:
+1) A great read for traffic sign classification by [Alex Staravoitau](https://navoshta.com/traffic-signs-classification/)
+2) Augmentation idea from inspired from [naokishibuya](https://github.com/naokishibuya/car-traffic-sign-classification)
